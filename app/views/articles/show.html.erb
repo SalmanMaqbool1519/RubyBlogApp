@@ -1,13 +1,11 @@
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
- 
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
- 
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h4 class="card-title"><b>Title: </b><%= @article.title %></h4>
+    <p class="card-text"><b>Text: </b><%= @article.text %></p>
+  </div>
+  <%= image_tag @article.image.url, class: "card-img-top"%>
+</div> 
+
 <h2>Comments</h2>
 <% @article.comments.each do |comment| %>
   <p>

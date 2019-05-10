@@ -1,5 +1,5 @@
 <%= form_with model: @article, local: true do |form| %>
- 
+ <!--Checking Validation of input in the fields-->
   <% if @article.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -13,19 +13,32 @@
       </ul>
     </div>
   <% end %>
- 
+<!--Checking Validation of input in the fields ends here-->
+
   <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
+  
+    <%= form.label :title, 'Title'%><br>
+    <%= form.text_field :title, class: "form-control" %>
   </p>
  
   <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :text %>
+    <%= form.label :text, 'Description'%><br>
+    <%= form.text_area :text, class: "form-control" %>
+  </p>
+
+  <p>
+    <%= form.label :text , 'Upload Article Picture' %><br>
+    <%= form.file_field :image %>
   </p>
  
   <p>
-    <%= form.submit %>
+    <%= form.button "Create Article", class: "btn btn-primary" %>
   </p>
  
 <% end %>
+
+
+
+ 
+  
+ 
